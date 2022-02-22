@@ -9,12 +9,27 @@ export default class CreateAppointments1645495244400
         name: 'appointments',
         columns: [
           {
-            name: '',
+            name: 'id',
+            type: 'varchar',
+            isPrimary: true,
+            generationStrategy: 'uuid',
+          },
+          {
+            name: 'provider',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'date',
+            type: 'timestamp with time zone',
+            isNullable: false,
           },
         ],
       }),
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable('appontments');
+  }
 }
