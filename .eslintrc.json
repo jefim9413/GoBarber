@@ -20,6 +20,9 @@
   "rules": {
     "no-use-before-define": "off",
     "class-methods-use-this": "off",
+    "@typescript-eslint/no-unused-vars": ["Error", {
+      "argsIgnorePattern": "_"
+    }],
     "camelcase": "off",
     "@typescript-eslint/no-use-before-define": [
       "error"
